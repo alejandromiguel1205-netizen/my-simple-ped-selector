@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Wiki | My Simple Ped Selector</title>
+    <title>Help Center | My Simple Ped Selector</title>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <style>
         :root {
-            --bg-main: #09090b;
-            --bg-sidebar: #121216;
-            --bg-card: #181820;
-            --border-color: #24242d;
+            --bg-main: #0b0b0d;
+            --bg-sidebar: #131317;
+            --bg-card: #181822;
+            --border-color: #22222a;
             --text-main: #f1f1f4;
             --text-muted: #a1a1b2;
-            --accent: #2ecc71; /* El verde característico de tu botón Rebuild */
+            --accent: #2ecc71; /* El verde REBUILD de tu app */
             --accent-dim: rgba(46, 204, 113, 0.1);
             --error: #e74c3c;
             --code-bg: #1e1e24;
@@ -23,7 +23,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -32,12 +32,11 @@
             color: var(--text-main);
             display: flex;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* --- SIDEBAR NAVIDAD (WIKI STYLE) --- */
+        /* --- MENÚ LATERAL (SIDEBAR) --- */
         aside {
-            width: 300px;
+            width: 320px;
             background-color: var(--bg-sidebar);
             border-right: 1px solid var(--border-color);
             position: fixed;
@@ -51,17 +50,16 @@
             z-index: 100;
         }
 
-        .wiki-logo h1 {
-            font-size: 1.4rem;
+        .app-logo h1 {
+            font-size: 1.5rem;
             color: #ffffff;
             font-weight: 800;
-            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .wiki-logo h1 iconify-icon {
+        .app-logo h1 iconify-icon {
             color: var(--accent);
         }
 
@@ -75,13 +73,13 @@
             border: 1px solid rgba(46, 204, 113, 0.2);
         }
 
-        .wiki-nav {
+        .nav-menu {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .wiki-nav-title {
+        .nav-title {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -90,41 +88,41 @@
             font-weight: 700;
         }
 
-        .wiki-nav a {
+        .nav-menu a {
             display: flex;
             align-items: center;
             gap: 10px;
             color: var(--text-muted);
             text-decoration: none;
-            padding: 10px 14px;
+            padding: 12px 14px;
             border-radius: 8px;
             font-size: 0.95rem;
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
-        .wiki-nav a:hover {
+        .nav-menu a:hover {
             color: #ffffff;
             background-color: rgba(255, 255, 255, 0.03);
         }
 
-        .wiki-nav a.active {
+        .nav-menu a.active {
             color: var(--accent);
             background-color: var(--accent-dim);
             font-weight: 600;
         }
 
-        /* --- MAIN DOCS CONTENT --- */
+        /* --- CONTENIDO PRINCIPAL --- */
         main {
-            margin-left: 300px;
+            margin-left: 320px;
             flex-grow: 1;
             padding: 60px 80px;
             max-width: 1000px;
         }
 
         section {
-            padding-top: 40px;
-            margin-bottom: 60px;
+            padding-top: 20px;
+            margin-bottom: 50px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 40px;
         }
@@ -137,7 +135,6 @@
             font-size: 2.2rem;
             color: #ffffff;
             font-weight: 800;
-            letter-spacing: -0.5px;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -146,6 +143,7 @@
 
         h2 iconify-icon {
             font-size: 2.4rem;
+            color: var(--accent);
         }
 
         p {
@@ -163,7 +161,66 @@
             font-weight: 700;
         }
 
-        /* --- TECH TABLE (SHORTCUTS) --- */
+        /* --- TARJETAS PASO A PASO --- */
+        .tutorial-step {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .step-number {
+            background-color: var(--accent);
+            color: #0b0b0d;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .step-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .file-type-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .file-card {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .file-card h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- TABLA DE ATAJOS --- */
         .wiki-table {
             width: 100%;
             border-collapse: collapse;
@@ -189,11 +246,6 @@
 
         .wiki-table td {
             border-bottom: 1px solid rgba(255, 255, 255, 0.01);
-            color: var(--text-muted);
-        }
-
-        .wiki-table tr:last-child td {
-            border-bottom: none;
         }
 
         kbd {
@@ -207,103 +259,55 @@
             padding: 3px 6px;
         }
 
-        /* --- CODE BLOCKS & CALLOUTS --- */
-        .callout {
-            background-color: var(--bg-card);
-            border-left: 4px solid var(--accent);
-            border-radius: 0 10px 10px 0;
-            padding: 24px;
-            margin: 25px 0;
-        }
-
-        .callout.error-callout {
-            border-left-color: var(--error);
+        /* --- ALERTAS / SOLUCIÓN DE ERRORES --- */
+        .error-box {
             background-color: rgba(231, 76, 60, 0.03);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--error);
+            border-radius: 0 12px 12px 0;
+            padding: 25px;
+            margin-bottom: 25px;
         }
 
-        .callout h4 {
+        .error-box h3 {
+            margin-top: 0;
             color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .callout p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
+        .error-box h3 iconify-icon {
+            color: var(--error);
         }
 
-        code {
-            background-color: var(--code-bg);
-            padding: 3px 6px;
-            border-radius: 4px;
-            color: #ffffff;
-            font-family: Consolas, Monaco, monospace;
-            font-size: 0.9rem;
+        /* --- CONTACT PILLS --- */
+        .contact-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
         }
 
-        /* --- WORKFLOW CARDS --- */
-        .step-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .step-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .step-card .badge {
-            display: inline-block;
-            background-color: var(--border-color);
-            color: var(--accent);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .step-card h4 {
-            font-size: 1.15rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .step-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* --- CONTACT PILL --- */
         .contact-pill {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 12px;
             background-color: var(--bg-sidebar);
             border: 1px solid var(--border-color);
             padding: 12px 24px;
             border-radius: 30px;
-            margin-top: 15px;
+            font-size: 1rem;
         }
 
         .contact-pill iconify-icon {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent);
         }
 
-        /* Responsividad básica */
         @media (max-width: 900px) {
-            aside { width: 100%; position: relative; height: auto; }
+            aside { width: 100%; position: relative; height: auto; padding: 20px; }
             main { margin-left: 0; padding: 40px 20px; }
             body { flex-direction: column; }
         }
@@ -312,142 +316,162 @@
 <body>
 
     <aside>
-        <div class="wiki-logo">
+        <div class="app-logo">
             <h1>My Simple Ped Selector</h1>
             <span class="version-tag">v1.0.0</span>
         </div>
 
-        <nav class="wiki-nav">
-            <div class="wiki-nav-title">Documentation</div>
-            <a href="#overview" class="active"><iconify-icon icon="lucide:book-open"></iconify-icon> Overview</a>
-            <a href="#shortcuts"><iconify-icon icon="fluent:keyboard-layout-twenty-four-regular"></iconify-icon> Keyboard Workflows</a>
-            <a href="#openiv"><iconify-icon icon="ant-design:folder-open-filled"></iconify-icon> OpenIV Integration</a>
-            <a href="#configuration"><iconify-icon icon="eos-icons:configuration-file"></iconify-icon> App Configuration</a>
-            <a href="#troubleshooting"><iconify-icon icon="fluent:alert-urgent-24-filled"></iconify-icon> Troubleshooting</a>
-            <a href="#support"><iconify-icon icon="material-symbols:contact-support-outline"></iconify-icon> Support & Contact</a>
+        <nav class="nav-menu">
+            <div class="nav-title">User Guide</div>
+            <a href="#welcome" class="active"><iconify-icon icon="lucide:home"></iconify-icon> Welcome</a>
+            <a href="#openiv-guide"><iconify-icon icon="ant-design:folder-open-filled"></iconify-icon> 1. OpenIV Setup</a>
+            <a href="#app-guide"><iconify-icon icon="eos-icons:configuration-file"></iconify-icon> 2. App Configuration</a>
+            <a href="#shortcuts-guide"><iconify-icon icon="fluent:keyboard-layout-twenty-four-regular"></iconify-icon> App Shortcuts</a>
+            <a href="#fixes-guide"><iconify-icon icon="fluent:alert-urgent-24-filled"></iconify-icon> Fix Common Errors</a>
+            <a href="#contact-guide"><iconify-icon icon="material-symbols:contact-support-outline"></iconify-icon> Support & Contact</a>
         </nav>
     </aside>
 
     <main>
 
-        <section id="overview">
-            <h2><iconify-icon icon="lucide:book-open"></iconify-icon> Overview</h2>
-            <p>Welcome to the advanced developer documentation portal for <strong>My Simple Ped Selector</strong>. This desktop tool functions as an efficient compiler for custom Grand Theft Auto V character files, optimizing the installation phase and cutting the security risk factor down to just 5% compared to manual XML modifications.</p>
-            <p>The system utilizes a custom architecture capable of generating individual data matrices, allowing modders to register models without repackaging heavy game components every time.</p>
+        <section id="welcome">
+            <h2><iconify-icon icon="lucide:sparkles"></iconify-icon> Welcome!</h2>
+            <p>Welcome to the official <strong>My Simple Ped Selector</strong> Help Center. This application was created to help you add custom addon characters (Peds) to your GTA V game in the easiest way possible, without having to manually edit complicated XML text files.</p>
+            <p>Follow this simple guide to learn how to place your character files in OpenIV and how to configure them inside the application to avoid errors.</p>
         </section>
 
-        <section id="shortcuts">
-            <h2><iconify-icon icon="fluent:keyboard-layout-twenty-four-regular"></iconify-icon> Keyboard Workflows</h2>
-            <p>Built with efficiency in mind, the environment maps power-user hotkeys directly to the core file operations. The application UI handles data changes reactively.</p>
+        <section id="openiv-guide">
+            <h2><iconify-icon icon="ant-design:folder-open-filled"></iconify-icon> 1. How to put your Addons in OpenIV</h2>
+            <p>Before using the application, you need to open <strong>OpenIV</strong>, turn on <strong>Edit Mode</strong>, and navigate to your custom addon DLC pack's folder, specifically inside <code>peds.rpf</code>. Check your character files and follow one of these two options:</p>
+            
+            <div class="file-type-container">
+                <div class="file-card">
+                    <h4><iconify-icon icon="mdi:file-document-outline"></iconify-icon> Option A: Non-Streamed (Standard Ped)</h4>
+                    <p>Use this option if your character folder contains only <strong>4 single files</strong> with these exact extensions:</p>
+                    <p style="margin-top: 10px; font-family: monospace; color: #ffffff;">• name.ydd<br>• name.ytd<br>• name.yft<br>• name.ymt</p>
+                    <p style="margin-top: 10px;"><strong>What to do:</strong> Drag and drop those 4 files directly into the root of <code>peds.rpf</code>.</p>
+                </div>
+
+                <div class="file-card">
+                    <h4><iconify-icon icon="material-symbols:folder-open-outline"></iconify-icon> Option B: Streamed (Complex Ped)</h4>
+                    <p>Use this option if your character is high-definition or has separate texture files/subfolders.</p>
+                    <p style="margin-top: 10px;"><strong>What to do:</strong> Right-click inside <code>peds.rpf</code>, create a <strong>new folder</strong> and name it exactly like your character. Then, open that folder and place all the character files inside it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="app-guide">
+            <h2><iconify-icon icon="eos-icons:configuration-file"></iconify-icon> 2. How to configure it in the App</h2>
+            <p>Now that your files are inside OpenIV, open <strong>My Simple Ped Selector</strong> and follow these 3 steps to register your character:</p>
+            
+            <div class="tutorial-step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3>Create the Profile</h3>
+                </div>
+                <p>Go to the top menu and click <strong>Ped -> Create New Ped</strong> (or just press <kbd>Ctrl + N</kbd> on your keyboard). A window will open where you must fill in the information:</p>
+                <ul style="margin-left: 20px; margin-top: 10px; color: var(--text-muted);">
+                    <li style="margin-bottom: 5px;"><strong>Ped Name:</strong> Type the exact name of your character's files in OpenIV. It must be identical!</li>
+                    <li style="margin-bottom: 5px;"><strong>Ped Gender:</strong> Choose if your character is <strong>Male</strong> (Hombre) or <strong>Female</strong> (Mujer).</li>
+                    <li style="margin-bottom: 8px;"><strong>Is Streamed:</strong> 
+                        <br>• Set to <strong>False</strong> if you followed Option A (dropped 4 loose files).
+                        <br>• Set to <strong>True</strong> if you followed Option B (created a custom folder).
+                    </li>
+                </ul>
+                <p>Click <strong>Save Ped</strong> to add it to the list.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3>Rebuild the Database</h3>
+                </div>
+                <p>Look at the top panel of the application and click the big grey button that says <strong>REBUILD!</strong>. A green bar will slide loading your character into the game's internal database. Wait for the success message to pop up.</p>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3>Save your Progress</h3>
+                </div>
+                <p>Finally, go to <strong>File -> Save</strong> in the top menu or simply press <kbd>Ctrl + G</kbd> on your keyboard. This will permanently lock in your character. If you see an asterisk (<code>*</code>) in the window title, it means you have unsaved changes!</p>
+            </div>
+        </section>
+
+        <section id="shortcuts-guide">
+            <h2><iconify-icon icon="fluent:keyboard-layout-twenty-four-regular"></iconify-icon> Application Shortcuts</h2>
+            <p>You can use these handy keyboard shortcuts inside the app to manage your list much faster like a pro:</p>
             
             <table class="wiki-table">
                 <thead>
                     <tr>
-                        <th>Operation Action</th>
-                        <th>Shortcut Command</th>
-                        <th>Backend System Impact</th>
+                        <th>Action</th>
+                        <th>Shortcut</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Create New Ped</strong></td>
+                        <td><strong>Create Ped</strong></td>
                         <td><kbd>Ctrl + N</kbd></td>
-                        <td>Initializes a fresh character dialog instance.</td>
+                        <td>Opens the window to add a new character quickly.</td>
                     </tr>
                     <tr>
-                        <td><strong>Save Workspace</strong></td>
+                        <td><strong>Save All</strong></td>
                         <td><kbd>Ctrl + G</kbd></td>
-                        <td>Commits current session state data into the master file network.</td>
+                        <td>Saves your entire character list workspace.</td>
                     </tr>
                     <tr>
-                        <td><strong>Save Profile As...</strong></td>
+                        <td><strong>Save As File</strong></td>
                         <td><kbd>Ctrl + A</kbd></td>
-                        <td>Exports the targeted ped into a dedicated <code>.spm</code> backup file.</td>
+                        <td>Exports the selected character as a single <code>.spm</code> file to share it.</td>
                     </tr>
                     <tr>
-                        <td><strong>Open External Profile</strong></td>
+                        <td><strong>Open File</strong></td>
                         <td><kbd>Ctrl + O</kbd></td>
-                        <td>Parses a standalone <code>.spm</code> dataset directly into the active table.</td>
+                        <td>Imports a <code>.spm</code> character file directly into your list.</td>
                     </tr>
                     <tr>
-                        <td><strong>Duplicate Row</strong></td>
+                        <td><strong>Duplicate</strong></td>
                         <td><kbd>Ctrl + D</kbd></td>
-                        <td>Clones data using safe duplication routing (e.g., <code>-copy</code>, <code>-2</code>).</td>
+                        <td>Clones the selected character adding <code>-copy</code> or numbers to the name.</td>
                     </tr>
                     <tr>
-                        <td><strong>Remove Asset</strong></td>
-                        <td><kbd>Delete</kbd></td>
-                        <td>Triggers a safety block prompt to securely purge row matrices.</td>
+                        <td><strong>Remove</strong></td>
+                        <td><kbd>Delete / Supr</kbd></td>
+                        <td>Deletes the selected character after asking for confirmation.</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="openiv">
-            <h2><iconify-icon icon="ant-design:folder-open-filled"></iconify-icon> OpenIV Integration</h2>
-            <p>To successfully link the software compiler logic with the RAGE engine architecture, you must match your physical asset directories inside OpenIV's streaming file container (<code>peds.rpf</code>) according to the format requirements:</p>
+        <section id="fixes-guide">
+            <h2><iconify-icon icon="fluent:alert-urgent-24-filled"></iconify-icon> How to Fix Common Errors</h2>
+            <p>If you encounter any issues while playing or trying to spawn your character, check these common solutions:</p>
             
-            <div class="callout">
-                <h4><iconify-icon icon="material-symbols:check-circle"></iconify-icon> Standard Mode (Non-Streamed)</h4>
-                <p>Applicable if the asset package contains exactly 4 separate core engine fragments: <code>.ydd</code> (geometry), <code>.ytd</code> (textures), <code>.yft</code> (physics), and <code>.ymt</code> (meta metadata). These must sit loose inside the root directory of your mod archive.</p>
+            <div class="error-box">
+                <h3><iconify-icon icon="akar-icons:circle-alert"></iconify-icon> The game crashes instantly when spawning the character!</h3>
+                <p>This happens because GTA V has strict memory allocation limits for mods. To fix this, you must install an updated custom <code>gameconfig.xml</code> file, along with the <code>HeapAdjuster</code> and <code>Packfile Limit Adjuster</code> plugins inside your main GTA V folder. This expands the game memory limit.</p>
             </div>
 
-            <div class="callout" style="border-left-color: #3498db;">
-                <h4><iconify-icon icon="material-symbols:folder-shared"></iconify-icon> Complex Mode (Streamed)</h4>
-                <p>Required for multi-texture assets or clothing fragments. You <strong>must build a dedicated subfolder</strong> named exactly like your target model inside <code>peds.rpf</code>, and load the texture asset clips directly inside that sub-directory partition.</p>
+            <div class="error-box">
+                <h3><iconify-icon icon="akar-icons:circle-alert"></iconify-icon> The character is completely invisible or has glitched textures!</h3>
+                <p>This is a mismatch error. Double-check your character's <strong>Is Streamed</strong> setting in the app list. If your character requires a folder structure inside OpenIV but you set it to <code>False</code> in the app, the game won't load the textures, making the model clip out or become invisible.</p>
             </div>
         </section>
 
-        <section id="configuration">
-            <h2><iconify-icon icon="eos-icons:configuration-file"></iconify-icon> Application Configuration</h2>
-            <p>The deployment pipeline requires exactly three phases to compile character properties safely from the interface to the local engine system:</p>
-            
-            <div class="step-grid">
-                <div class="step-card">
-                    <span class="badge">1</span>
-                    <h4>Profile Mapping</h4>
-                    <p>Trigger creation with <kbd>Ctrl + N</kbd>, assign the model string name (case-sensitive mapping), match the gender entity and toggle the streaming checkbox.</p>
-                </div>
-                <div class="step-card">
-                    <span class="badge">2</span>
-                    <h4>Rebuild Phase</h4>
-                    <p>Execute the <strong>REBUILD!</strong> action button. The custom progress thread compiles and indexes rows directly to protect your database assets.</p>
-                </div>
-                <div class="step-card">
-                    <span class="badge">3</span>
-                    <h4>Secure Commit</h4>
-                    <p>Press <kbd>Ctrl + G</kbd> before exiting to permanently serialize settings and synchronize configurations with your system environment.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="troubleshooting">
-            <h2><iconify-icon icon="fluent:alert-urgent-24-filled"></iconify-icon> Troubleshooting</h2>
-            <p>Modding environmental platforms requires specific configuration adjustments. Review these protocol responses if runtime issues occur:</p>
-            
-            <div class="faq-item">
-                <h3><iconify-icon icon="akar-icons:circle-alert"></iconify-icon> Instant Desktop Crash (CTD) on Entity Spawning</h3>
-                <p>This runtime error surfaces when you exceed the stock allocated memory array blocks of GTA V. To solve this restriction, deploy an upgraded custom <code>gameconfig.xml</code> file, complemented by <code>HeapAdjuster</code> and <code>Packfile Limit Adjuster</code> plugins in the root game path.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3><iconify-icon icon="akar-icons:circle-alert"></iconify-icon> Entity Renders Invisible or with Broken Texture Shading</h3>
-                <p>Points directly to a structural mismatch. Check your <strong>Is Streamed</strong> toggle values. If your asset requires a subfolder architecture within OpenIV but the compiler flagged it as <code>False</code>, the engine shader pipeline will drop rendering layers, masking the entity or breaking textures.</p>
-            </div>
-        </section>
-
-        <section id="support">
+        <section id="contact-guide">
             <h2><iconify-icon icon="material-symbols:contact-support-outline"></iconify-icon> Support & Contact</h2>
-            <p>For official application distributions, release patch logs, or direct line developer assistance, interact with the authorized endpoints below:</p>
+            <p>If you find any bugs or need help configuring a specific character, feel free to contact me or check the official community mod page:</p>
             
-            <div class="wiki-nav" style="flex-direction: row; gap: 15px; margin-top: 10px;">
+            <div class="contact-container">
                 <div class="contact-pill">
                     <iconify-icon icon="ic:baseline-discord"></iconify-icon>
-                    <span><strong>Discord Handle:</strong> miguelxd2</span>
+                    <span><strong>Discord Username:</strong> miguelxd2</span>
                 </div>
                 <div class="contact-pill">
                     <iconify-icon icon="tabler:download"></iconify-icon>
-                    <span><strong>Platform:</strong> GTA5-Mods Release Catalog</span>
+                    <span><strong>Official Download Platform:</strong> GTA5-Mods Catalog</span>
                 </div>
             </div>
         </section>
@@ -455,7 +479,8 @@
     </main>
 
     <script>
-        const links = document.querySelectorAll('.wiki-nav a');
+        // Cambiar la clase activa del menú lateral al hacer scroll/click
+        const links = document.querySelectorAll('.nav-menu a');
         links.forEach(link => {
             link.addEventListener('click', () => {
                 links.forEach(l => l.classList.remove('active'));
